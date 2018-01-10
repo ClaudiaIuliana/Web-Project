@@ -4,7 +4,7 @@ const Sequelize = require("sequelize")
 const nodeadmin=require("nodeadmin")
 
 
-const sequelize =new Sequelize('restaurante_bd','root','',{
+const sequelize =new Sequelize('biblioteca_bd','root','',{
     dialect: 'mysql',
     host:'localhost'
 })
@@ -125,7 +125,7 @@ app.delete('/carti/:id', (req,res)=>
 
 
 app.put('/biblioteca /:id', function(request, response) {
-    Biblioteca.findById(request.params.id).then(function(restaurants) {
+    Biblioteca.findById(request.params.id).then(function(biblioteca) {
         if(Biblioteca) {
             Biblioteca.update(request.body).then(function(biblioteca){
                 response.status(201).send(biblioteca)
